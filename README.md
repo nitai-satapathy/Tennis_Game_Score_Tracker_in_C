@@ -29,4 +29,4 @@ This project is licensed under the [gnu general public license v3.0](LICENSE).
 
 ## Author
 
-- Nitai Satapathy(https://github.com/nitai-satapathy)
+- Nitai Satapathy (https://github.com/nitai-satapathy)
