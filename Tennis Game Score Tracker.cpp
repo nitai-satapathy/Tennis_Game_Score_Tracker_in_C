@@ -4,7 +4,7 @@
 struct Player {
     char name[50];
     int gamesWon;
-    
+    int matchesWon;
 };
 
 // Function to display the current game score
@@ -17,14 +17,17 @@ int main() {
     // Initialize players
     struct Player player1, player2;
     player1.gamesWon = 0;
+    player1.matchesWon = 0;
     player2.gamesWon = 0;
+    player2.matchesWon = 0;
+
+    int player1Score = 0, player2Score = 0;
+    int matchesPlayed = 0;
 
     printf("Enter Player 1's Name: ");
     scanf("%s", player1.name);
     printf("Enter Player 2's Name: ");
     scanf("%s", player2.name);
-
-    int player1Score = 0, player2Score = 0;
 
     while (1) {
         int choice;
@@ -58,6 +61,18 @@ int main() {
             printf("\nPlayer Statistics:\n");
             printf("%s: %d games won\n", player1.name, player1.gamesWon);
             printf("%s: %d games won\n", player2.name, player2.gamesWon);
+
+            // Update overall match score
+            if (player1.gamesWon > player2.gamesWon) {
+                player1.matchesWon++;
+            } else if (player2.gamesWon > player1.gamesWon) {
+                player2.matchesWon++;
+            }
+
+            // Display overall match score
+            printf("Overall Match Score:\n");
+            printf("%s: %d matches won\n", player1.name, player1.matchesWon);
+            printf("%s: %d matches won\n", player2.name, player2.matchesWon);
 
             // Ask if the players want to continue
             char playAgain;
